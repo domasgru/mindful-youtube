@@ -1,0 +1,143 @@
+ytd-app {
+  overflow: hidden;
+}
+
+/* hide youtube video list ad */
+.ytd-ad-slot-renderer {
+  display: none !important;
+}
+
+/* hide youtube shorts */
+ytd-reel-shelf-renderer {
+  display: none !important;
+}
+
+/* hide sidebar "Home", "Shorts", "Subscription", "More from Youtube", "Footer" */
+tp-yt-app-drawer#guide ytd-guide-section-renderer:first-child ytd-guide-entry-renderer.ytd-guide-section-renderer:nth-of-type(-n+3) {
+ display: none !important;
+}
+
+/* hide "People also watched", "For you", "Previously watched" */
+/* TODO: consider not disabling "People also watched" */
+ytd-search ytd-shelf-renderer {
+  display: none !important;
+}
+
+/* hide video recommendations while watching video */
+.ytd-watch-flexy #secondary #related {
+  opacity: 0;
+  pointer-events: 0;
+}
+
+/* hide header notification bell button */
+ytd-notification-topbar-button-renderer {
+  display: none !important;
+}
+
+/* hide sidebar subscriptions section */
+.ytd-guide-renderer ytd-guide-section-renderer:nth-child(2) {
+  display: none !important;
+}
+
+/* hide sidebar more from youtube section */
+.ytd-guide-renderer ytd-guide-section-renderer:nth-child(4) {
+  display: none !important;
+}
+
+/* hide below search suggestion chips */
+.ytd-feed-filter-chip-bar-renderer {
+  display: none !important;
+}
+
+#chip-bar {
+  display: none !important;
+}
+
+/* hide homepage video suggestions */
+ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer * {
+  display: none !important;
+}
+
+/* hide footer */
+#footer {
+  display: none !important;
+}
+
+/* hide border and space under header logo */
+ytd-guide-collapsible-section-entry-renderer.ytd-guide-section-renderer:not(:first-child) {
+  border: none !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* hide related videos on mobile */
+ytd-watch-flexy #related {
+  display: none !important;
+}
+
+/* hide sidebar buttons on mobile */
+ytd-mini-guide-renderer {
+  display: none !important;
+}
+
+/* show noise background */
+ytd-browse[page-subtype="home"]:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 10000;
+  pointer-events: none;
+  background-image: url('https://i.postimg.cc/tCkZYWmQ/noise-30.png');
+}
+
+/* show bottom gradient */
+ytd-browse[page-subtype="home"]:after {
+  content: url('https://i.postimg.cc/ry4r5cT8/blur-final.png');
+  display: block;
+  position: absolute;
+  opacity: 1;
+  bottom: -5%;
+  left: 50%;
+  transform: translateY(70%) translateX(-50%);
+  z-index: 10000;
+  height: auto;
+  pointer-events: none;
+  animation: upDownAnimation 3s ease-in-out infinite;
+}
+@keyframes upDownAnimation {
+  0% {
+    transform: translateY(70%) translateX(-50%);
+  }
+  50% {
+    transform: translateY(60%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(70%) translateX(-50%);
+  }
+}
+
+/* show homepage welcome text */
+ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer::after {
+  content: "What did you come here to watch? ✨";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -15px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  font-size: 42px;
+  font-weight: 200;
+  color: white;
+  pointer-events: none;
+}
