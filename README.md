@@ -2,11 +2,6 @@
 
 A Chrome extension that removes distractions from YouTube and keeps you focused on what you actually came to watch.
 
-For me, YouTube has always been both highly distracting and addictive.
-I have lost many hours visiting YouTube to watch something useful, only to get distracted by recommendations and end up consuming low-quality content.
-
-This started as an Arc Boost that I used every day, and it worked well enough that I rebuilt it as a Chrome extension.
-
 ## What it does
 
 It makes the YouTube UI minimal and removes the things that pull you away:
@@ -52,6 +47,3 @@ Click the extension icon in the toolbar to:
 - Turn the extension on or off without uninstalling it
 - Add your own custom CSS for youtube.com, which is saved automatically as you type
 
-## Themes
-
-It works with both the light and dark YouTube themes and follows whichever one you have set.
