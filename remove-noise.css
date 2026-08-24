@@ -26,7 +26,7 @@ ytd-search ytd-shelf-renderer {
 /* hide video recommendations while watching video */
 .ytd-watch-flexy #secondary #related {
   opacity: 0;
-  pointer-events: 0;
+  pointer-events: none;
 }
 
 /* hide header notification bell button */
@@ -138,6 +138,31 @@ ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer::after {
   z-index: 1;
   font-size: 42px;
   font-weight: 200;
-  color: white;
+  /* Light theme is the default so the text can never end up invisible if
+     YouTube's theme attribute or design tokens ever change. */
+  color: #0f0f0f;
+  color: var(--yt-spec-text-primary, #0f0f0f);
   pointer-events: none;
+}
+
+/* YouTube sets a boolean `dark` attribute on <html> for the dark theme and
+   removes it for light. It resolves "device theme" itself, so this covers the
+   OS-preference case too and updates live when the theme is toggled. */
+html[dark] ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer::after {
+  color: #f1f1f1;
+  color: var(--yt-spec-text-primary, #f1f1f1);
+}
+
+/* Both overlay images are light grain / a white glow on transparency, drawn
+   for a dark backdrop, so on the light theme they vanish into the white page.
+   `invert` flips their colour without touching alpha, turning the grain and the
+   glow dark so the same artwork reads on a light background. */
+html:not([dark]) ytd-browse[page-subtype="home"]:before {
+  opacity: 0.5;
+  filter: invert(1);
+}
+
+html:not([dark]) ytd-browse[page-subtype="home"]:after {
+  opacity: 0.45;
+  filter: invert(1);
 }
