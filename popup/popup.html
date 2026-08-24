@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mindful YouTube</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="header">
+      <span class="title">Mindful YouTube</span>
+      <label class="switch">
+        <input type="checkbox" id="enabled-toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="section">
+      <label class="section-label" for="custom-css">Custom CSS</label>
+      <textarea
+        id="custom-css"
+        placeholder="/* Add your own CSS for youtube.com here */"
+        spellcheck="false"
+      ></textarea>
+      <div class="footer-row">
+        <span id="status" class="status"></span>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
