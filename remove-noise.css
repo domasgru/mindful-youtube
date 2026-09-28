@@ -2,11 +2,6 @@ ytd-app {
   overflow: hidden;
 }
 
-/* hide youtube video list ad */
-.ytd-ad-slot-renderer {
-  display: none !important;
-}
-
 /* hide youtube shorts */
 ytd-reel-shelf-renderer {
   display: none !important;

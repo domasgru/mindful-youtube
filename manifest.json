@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Mindful YouTube",
   "version": "1.0.0",
-  "description": "Removes distracting elements from YouTube (ads, recommendations, shorts, sidebar clutter) and lets you add your own custom CSS.",
+  "description": "Removes distracting elements from YouTube (recommendations, shorts, sidebar clutter) and lets you add your own custom CSS.",
   "permissions": ["storage"],
   "icons": {
     "16": "icons/icon16.png",

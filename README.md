@@ -9,7 +9,6 @@ It makes the YouTube UI minimal and removes the things that pull you away:
 - The homepage video grid, replaced with "What did you come here to watch? ✨"
 - Recommended videos in the sidebar while watching
 - Shorts shelves
-- Ads in video lists
 - The notification bell
 - Sidebar and search page clutter, filter chips, and the footer
 
